@@ -1,0 +1,47 @@
+# Create a class called "Car" that will represent a car
+class Car:
+    
+    # Define the constructor for the Car class
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+        
+    # Define a method that will return a formatted string containing the car's make, model, and year
+    def get_descriptive_name(self):
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    
+    # Define a method that will return the car's current odometer reading
+    def read_odometer(self):
+        print(f"This car has {self.odometer_reading} miles on it.")
+    
+    # Define a method that will update the car's odometer reading to a given value
+    def update_odometer(self, mileage):
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You can't roll back an odometer!")
+    
+    # Define a method that will increment the car's odometer reading by a given amount
+    def increment_odometer(self, miles):
+        self.odometer_reading += miles
+
+# Create an instance of the Car class
+my_car = Car("toyota", "corolla", 2022)
+
+# Print the descriptive name of the car
+print(my_car.get_descriptive_name())
+
+# Read the car's odometer reading
+my_car.read_odometer()
+
+# Update the car's odometer reading to a new value
+my_car.update_odometer(5000)
+
+# Increment the car's odometer reading by a given amount
+my_car.increment_odometer(100)
+
+# Read the car's odometer reading again to confirm that it has been updated
+my_car.read_odometer()
